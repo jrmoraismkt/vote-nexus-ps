@@ -45,12 +45,12 @@ const Admin = () => {
       <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden p-8">
         <Particles />
 
-        <div className="absolute top-8 left-8 z-20">
-          <PsButton variant="glass" size="sm" onClick={() => navigate("/")}>
-            <Home className="w-5 h-5" />
-            Início
-          </PsButton>
-        </div>
+      <div className="absolute top-4 left-4 md:top-8 md:left-8 z-20">
+        <PsButton variant="glass" size="sm" onClick={() => navigate("/")}>
+          <Home className="w-4 h-4 md:w-5 md:h-5" />
+          Início
+        </PsButton>
+      </div>
 
         <div className="relative z-10 glass-morphism rounded-3xl p-12 max-w-md w-full">
           <h1 className="text-4xl font-bold text-foreground text-center mb-8 neon-text">
@@ -86,13 +86,13 @@ const Admin = () => {
       <Particles />
 
       {/* Header */}
-      <div className="relative z-10 flex justify-between items-center mb-8">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8 gap-4 p-4">
         <PsButton variant="glass" size="sm" onClick={() => navigate("/")}>
-          <Home className="w-5 h-5" />
+          <Home className="w-4 h-4 md:w-5 md:h-5" />
           Início
         </PsButton>
 
-        <h1 className="text-4xl font-bold text-foreground neon-text">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground neon-text text-center">
           Painel Administrativo
         </h1>
 
@@ -101,12 +101,12 @@ const Admin = () => {
           size="sm"
           onClick={() => setShowPartial(!showPartial)}
         >
-          <Eye className="w-5 h-5" />
+          <Eye className="w-4 h-4 md:w-5 md:h-5" />
           {showPartial ? "Ocultar" : "Ver"} Parcial
         </PsButton>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 p-4">
         {/* Statistics */}
         <div className="glass-morphism rounded-3xl p-8">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
