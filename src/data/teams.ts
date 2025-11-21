@@ -17,7 +17,7 @@ export const teams: Team[] = [
     name: "Time Vermelho",
     color: "#ef4444",
     emoji: "🟥",
-    players: ["Evandro", "Cayo", "Cristiano", "Fábio", "Vencedor"],
+    players: ["Evandro", "Cayo", "Cristiano", "Fábio", "Victor"],
   },
   {
     name: "Time Azul",
