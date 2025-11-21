@@ -39,22 +39,22 @@ const VotingField = ({ onComplete }: VotingFieldProps) => {
   const isComplete = positions.every((pos) => selections[pos.id]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden p-4 md:p-8">
       <Particles />
 
       {/* Header */}
-      <div className="absolute top-8 left-8 right-8 flex justify-between items-center z-20">
+      <div className="absolute top-4 left-4 right-4 md:top-8 md:left-8 md:right-8 flex justify-between items-center z-20 gap-2">
         <PsButton variant="glass" size="sm" onClick={() => navigate("/")}>
-          <Home className="w-5 h-5" />
-          Início
+          <Home className="w-4 h-4 md:w-5 md:h-5" />
+          <span className="hidden md:inline">Início</span>
         </PsButton>
-        <h1 className="text-3xl font-bold text-foreground neon-text">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground neon-text text-center">
           Monte Sua Seleção
         </h1>
-        <div className="w-32" />
+        <div className="w-16 md:w-32" />
       </div>
 
-      <div className="relative z-10 w-full max-w-3xl mt-20">
+      <div className="relative z-10 w-full max-w-3xl mt-16 md:mt-20">
         {/* Field */}
         <div className="relative aspect-[2/3] bg-gradient-to-b from-green-800/20 to-green-900/20 rounded-3xl border-4 border-ps-cyan/30 overflow-hidden glass-morphism">
           {/* Field Lines */}
@@ -69,7 +69,7 @@ const VotingField = ({ onComplete }: VotingFieldProps) => {
               <button
                 key={position.id}
                 onClick={() => setActivePosition(position.id)}
-                className={`absolute w-24 h-24 rounded-full flex flex-col items-center justify-center font-bold text-sm transition-all duration-300 hover:scale-110 ${
+                className={`absolute w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center font-bold text-xs md:text-sm transition-all duration-300 hover:scale-110 ${
                   isSelected
                     ? "bg-gradient-to-br from-ps-cyan to-ps-blue shadow-[0_0_30px_rgba(6,182,212,0.8)] scale-110"
                     : "glass-morphism hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
@@ -80,9 +80,9 @@ const VotingField = ({ onComplete }: VotingFieldProps) => {
                   transform: "translate(-50%, -50%)",
                 }}
               >
-                <span className="text-foreground">{position.label}</span>
+                <span className="text-foreground text-xs md:text-sm">{position.label}</span>
                 {selections[position.id] && (
-                  <span className="text-xs mt-1 text-center px-2">
+                  <span className="text-[10px] md:text-xs mt-1 text-center px-1 md:px-2">
                     {selections[position.id]}
                   </span>
                 )}
